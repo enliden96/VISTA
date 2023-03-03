@@ -40,8 +40,8 @@ pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f htt
 conda install -c conda-forge boost
 pip install ipdb
 
-git clone https://github.com/Gorilla-Lab-SCUT/VISTA.git
-
+git clone https://github.com/enliden96/VISTA.git
+cd VISTA
 pip install -r requirements.txt
 
 python setup.py build develop
@@ -117,6 +117,12 @@ To resume a training, run
 To evaluate the VISTA on the validation set, simply run
 ```
 ./tools/scripts/test.sh configuration_path work_dir workdir/checkpoint.pth
+```
+
+or to do it locally on one GPU
+
+```
+python tools/test.py configs/vista/vista.py workdir/vista.pth --out testingtesting.pkl
 ```
 
 To test the VISTA on the test set, please enable the test flag in [test.sh](tools/scripts/test.sh) and replace the testing pkl path in [dist_test.py](tools/dist_test.py)
