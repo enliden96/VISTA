@@ -32,7 +32,13 @@ Detecting objects from LiDAR point clouds is of tremendous significance in auton
 ```
 conda create --name vista python=3.7
 conda activate vista
+conda install cudatoolkit=11.1.1 -c conda-forge
+conda install cudatoolkit-dev=11.1.1 -c conda-forge
+
 pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+conda install -c conda-forge boost
+pip install ipdb
 
 git clone https://github.com/Gorilla-Lab-SCUT/VISTA.git
 
