@@ -10,8 +10,8 @@ import torch.distributed as dist
 from det3d import torchie
 from det3d.core import coco_eval, results2json
 from det3d.datasets import build_dataloader, build_dataset
-from det3d.datasets.kitti import kitti_common as kitti
-from det3d.datasets.kitti.eval import get_official_eval_result
+# from det3d.datasets.kitti import kitti_common as kitti
+# from det3d.datasets.kitti.eval import get_official_eval_result
 from det3d.models import build_detector
 from det3d.torchie.apis import init_dist
 from det3d.torchie.apis.train import example_convert_to_torch
@@ -178,7 +178,7 @@ def main():
 
     model = MegDataParallel(model, device_ids=[0])
     result_dict, detections = test(
-        data_loader, model, save_dir=None, distributed=distributed
+        data_loader, model, save_dir=workdir/, distributed=distributed
     )
 
     for k, v in result_dict["results"].items():

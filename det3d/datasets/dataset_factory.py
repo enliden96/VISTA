@@ -1,11 +1,11 @@
-from .kitti import KittiDataset
+# from .kitti import KittiDataset
 from .nuscenes import NuScenesDataset
-from .lyft import LyftDataset
+# from .lyft import LyftDataset
 
 dataset_factory = {
-    "KITTI": KittiDataset,
+    # "KITTI": KittiDataset,
     "NUSC": NuScenesDataset,
-    "LYFT": LyftDataset,
+    # "LYFT": LyftDataset,
 }
 
 
